@@ -10,121 +10,177 @@
       </title>
   </head>
   <body>
-      <header>
-      <h1>Jimmy Correia - Developer Portfolio</h1>
-      <p>Developer | Python | Systems | Web</p>
-      </header>
-      <main>
-      <section id="about-me">
-          <h2>About Me</h2>
-          <p>Hi, I’m Jimmy. I’m a former Active Duty U.S. Navy Sailor with six years of honorable service. Near the end of my contract, I discovered programming—and it quickly became a passion.
-            Over the past several months, I’ve spent countless hours building projects and learning by doing. I’ve worked on everything from stock market simulations in Pygame to training machine-learning agents in custom environments, as well as web development projects like this one.
-            I’m actively seeking internships, entry-level roles, or training opportunities where I can continue to grow as a developer. I’m motivated, disciplined, and eager to learn.          
-          </p>
-      </section>
-      <section id="projects">
-        <h2>Projects</h2>
-        <div id="stock-market-simulation">
-            <h3>Pygame Stock Market Simulation</h3>
-            <h4><em>A data-driven stock market simulator with real-time price and volume modeling</em></h4>
-            <video
-            src="media/stock-game.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            >
-            </video>
+  <header>
+    <h1>Jimmy Correia</h1>
+    <p>Software Developer — Python, Systems & Web</p>
+  </header>
 
-            <p>This project significantly deepened my understanding of object-oriented programming and the importance of well-structured, maintainable data systems. One of the main challenges I encountered early on was managing a large JSON-based data schema containing roughly 2,000 data points per stock, including simulated volume, open, high, low, close, and real-time price updates.
-            As the simulation grew more complex, the overhead of reading from and writing to JSON became a performance bottleneck. Recognizing this early, I refactored the project’s data layer to use SQLite, designing a more efficient schema optimized for frequent reads and writes. This change significantly reduced overhead and allowed the simulation to scale more reliably in real time.
-            </p>
-        </div>
-        <div id="dynamic-sprite-generation">
-            <h3>Modular Crafting & Sprite Generation System</h3>
-            <h4><em>A procedural weapon crafting and sprite generation prototype built in Python</em></h4>
-            <video
-            src="media/blacksmith-game.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            >
-            </video>
-            <p>
-             I began this project after applying lessons learned from my simulation work, particularly around class design and modular architecture. From the outset, I focused on keeping systems as decoupled and reusable as possible, which led to the development of a dynamic sprite generation system paired with shape-based crafting logic.
+  <main>
+  <section id="about-me">
+    <h2>About Me</h2>
 
-            This modular approach made it straightforward to introduce an object factory responsible for generating thematically consistent weapon sprites. The factory accounts for selected materials and their intrinsic elemental properties, using those attributes to determine both visual components and procedurally generated prefix and suffix names. This design significantly reduced manual asset creation and saved substantial development time.
-            </p>
-        </div>
-        <div id="tile-renderer">
-            <h3>Experimental Tile-Based World Renderer</h3>
-            <h4><em>An early prototype built with FreeSimpleGUI</em></h4>
-            <video
-            src="media/clicker-game.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            >
-            </video>
-            <p>This project was an early experimental prototype that pushed me to think creatively about systems and performance constraints. I implemented a functional overworld tile traversal system using FreeSimpleGUI a library not intended for real-time map rendering or game-style interaction.
+    <p>
+      <strong>Hi, I’m Jimmy.</strong> I’m a former Active Duty U.S. Navy Sailor with
+      six years of honorable service. Near the end of my contract, I discovered
+      programming — and it quickly became a passion.
+    </p>
 
-The world was defined as an ASCII grid, where individual characters mapped to tile sprite file paths. On first load, the system dynamically composed the full map into a single PNG image to address the significant overhead of loading many individual assets at runtime. This generated map was then cached and reused on subsequent loads, drastically improving performance when re-entering the overworld.
+    <p>
+      Over the past several months, I’ve spent countless hours building projects
+      and learning by doing. I’ve worked on everything from
+      <strong>stock market simulations in Pygame</strong> to
+      <strong>training machine-learning agents</strong> in custom environments,
+      as well as web development projects like this one.
+    </p>
 
-While I would approach this problem differently today, this project taught me valuable lessons about performance bottlenecks, asset management, caching strategies, and working within and sometimes around the constraints of a chosen toolset.</p>
-       </div>
-      </section>
-      <section>
-<div id="skills">
-<div id="skills">
-<h2>Core Skills</h2>
-<ul class="skills-list">
-  <li><strong>Python - </strong><span>OOP, simulations, automation</span></li>
-  <li><strong>Game Development - </strong><span>Pygame, game loops, state systems</span></li>
-  <li><strong>Web - </strong><span>HTML, CSS, JavaScript basics</span></li>
-  <li><strong>Data - </strong><span>JSON, SQLite</span></li>
-</ul>
-<h2>Creative Skills</h2>
-<ul class="skills-list">
-  <li><strong>Pixel Art - </strong><span>Aseprite, spritesheets, UI assets</span></li>
-  <li><strong>Game Audio - </strong><span>Music composition, sound design</span></li>
-  <li><strong>Visual Design - </strong><span>UI layout, readability, theming</span></li>
-</ul>
-<section id="art">
-  <h2>Artwork</h2>
-  <p class="art-note">Some visual work I’ve created alongside my development projects.</p>
+    <p>
+      I’m actively seeking <em>internships, entry-level roles, or training
+      opportunities</em> where I can continue to grow as a developer.
+      I’m motivated, disciplined, and eager to learn.
+    </p>
+  </section>
 
-  <div class="art-grid">
-    <img src="art/ASTEROTH CLEAN.png" alt="Pixel art sword">
-    <img src="art/blink_gif.gif" alt="Pixel art UI panel">
-    <img src="art/flight.gif" alt="Pixel art forge background">
-    <img src="art/IBLIS.png"></img>
-    <img src="art/agony_face-Sheet.png"></img>
-    <img src="art/bael.png"></img>
-  </div>
-</section>
-<section id="music">
-  <h2>Music</h2>
-  <p class="music-note">
-    A couple of tracks I’ve composed for personal and game-related projects.
-  </p>
-
-  <div class="music-player">
-    <p><strong>Track:</strong> Memories </p>
-    <audio controls preload="none">
-      <source src="music/Memories - Breakcore.wav" type="audio/wav">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-</section>
+  <section id="projects" >
+    <h2>Projects</h2>
 
 
-</div>
+    <article id="stock-market-simulation", class="reveal">
+      <h3>Pygame Stock Market Simulation</h3>
+      <p><em>A data-driven stock market simulator with real-time price and volume modeling</em></p>
 
-      </section>
+      <video src="media/stock-game.mp4" alt="stock market simulation gameplay footage" autoplay muted loop playsinline></video>
 
-  </main>
+      <p>
+        This project significantly deepened my understanding of
+        <strong>object-oriented programming</strong> and the importance of
+        well-structured, maintainable data systems.
+      </p>
+
+      <p>
+        Early on, I faced challenges managing a large JSON-based data schema
+        containing roughly <strong>2,000 data points per stock</strong>, including
+        simulated volume, OHLC data, and real-time price updates.
+      </p>
+
+      <p>
+        As complexity increased, JSON I/O became a performance bottleneck.
+        Recognizing this, I refactored the data layer to use
+        <strong>SQLite</strong>, designing a schema optimized for frequent reads
+        and writes. This change significantly improved performance and scalability.
+      </p>
+    </article>
+
+    <article id="dynamic-sprite-generation" class="reveal">
+      <h3>Modular Crafting & Sprite Generation System</h3>
+      <p><em>A procedural weapon crafting and sprite generation prototype built in Python</em></p>
+
+      <video src="media/blacksmith-game.mp4" alt="modular crafting and sprite generation gameplay footage" autoplay muted loop playsinline></video>
+
+      <p>
+        I began this project by applying lessons learned from my simulation work,
+        particularly around <strong>class design</strong> and
+        <strong>modular architecture</strong>.
+      </p>
+
+      <p>
+        This led to a dynamic sprite generation system paired with shape-based
+        crafting logic. A dedicated object factory generates thematically
+        consistent weapons based on selected materials and their elemental
+        properties.
+      </p>
+
+      <p>
+        These attributes influence both visual components and procedurally
+        generated prefix and suffix names, significantly reducing manual asset
+        creation and saving development time.
+      </p>
+    </article>
+
+    <article id="tile-renderer" class="reveal">
+      <h3>Experimental Tile-Based World Renderer</h3>
+      <p><em>An early prototype built with FreeSimpleGUI</em></p>
+
+      <video src="media/clicker-game.mp4" alt="clicker game prototype footage" autoplay muted loop playsinline></video>
+
+      <p>
+        This experimental prototype pushed me to think creatively about
+        <strong>performance constraints</strong> and system design.
+        I implemented a functional overworld traversal system using FreeSimpleGUI
+        a library not intended for real-time rendering.
+      </p>
+
+      <p>
+        The world was defined as an ASCII grid, with characters mapped to tile
+        sprite paths. On first load, the entire map was dynamically composed into
+        a single PNG image and cached for reuse.
+      </p>
+
+      <p>
+        While I would approach this differently today, the project taught me
+        valuable lessons about performance bottlenecks, asset management,
+        caching strategies, and working within tool constraints.
+      </p>
+    </article>
+  </section>
+
+  <section id="skills" class="reveal">
+    <h2>Core Skills</h2>
+    <ul class="skills-list">
+      <li><strong>Python:</strong> OOP, simulations, automation</li>
+      <li><strong>Game Development:</strong> Pygame, game loops, state systems</li>
+      <li><strong>Web:</strong> HTML, CSS, JavaScript fundamentals</li>
+      <li><strong>Data:</strong> JSON, SQLite</li>
+    </ul>
+
+    <h2>Creative Skills</h2>
+    <ul class="skills-list">
+      <li><strong>Pixel Art:</strong> Aseprite, spritesheets, UI assets</li>
+      <li><strong>Game Audio:</strong> Music composition, sound design</li>
+      <li><strong>Visual Design:</strong> UI layout, readability, theming</li>
+    </ul>
+  </section>
+
+  <section id="art" class="reveal">
+    <h2>Artwork</h2>
+    <p class="art-note">Some visual work I’ve created alongside my development projects.</p>
+
+    <div class="art-grid">
+      <img src="art/ASTEROTH CLEAN.png" alt="Pixel art sword">
+      <img src="art/blink_gif.gif" alt="Pixel art UI panel">
+      <img src="art/flight.gif" alt="Pixel art forge background">
+      <img src="art/IBLIS.png"></img>
+      <img src="art/agony_face-Sheet.png"></img>
+      <img src="art/bael.png"></img>
+    </div>
+  </section>
+  <section id="music" class="reveal">
+    <h2>Music</h2>
+    <p class="music-note">
+      A couple of tracks I’ve composed for personal and game-related projects.
+    </p>
+
+    <div class="music-player">
+      <p><strong>Track:</strong> Memories </p>
+      <audio controls preload="none">
+        <source src="music/Memories - Breakcore.wav" alt="Memories - Breakcore" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+      </div>
+  </section>
+    </main>
+      <script>
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+
+        document.querySelectorAll(".reveal").forEach(el => {
+          observer.observe(el);
+        });
+      </script>
   </body>
-  
 </html>
