@@ -4,8 +4,9 @@ body {
   margin: 0;
   padding: 0;
 
-  /* Enforced readable minimums */
-  font-size: clamp(15px, 1vw, 16px);
+  /* MINIMUM readability guard */
+  font-size: 15px;
+
   color: #222222;
   line-height: 1.6;
   letter-spacing: 0.2px;
@@ -22,12 +23,10 @@ body {
 header,
 main {
   max-width: 900px;
-
-  /* Prevent layout collapse on small screens */
-  min-width: 280px;
-
   margin: 0 auto;
-  padding: clamp(20px, 4vw, 32px) clamp(16px, 4vw, 24px);
+
+  /* MINIMUM padding only */
+  padding: max(32px, 1.5rem) max(24px, 1.25rem);
 }
 
 /* -------- Header -------- */
@@ -35,28 +34,36 @@ header {
   text-align: center;
   background-color: #F5E7C6;
   border-radius: 10px;
-  margin-top: clamp(20px, 5vw, 32px);
+
+  /* MINIMUM spacing */
+  margin-top: max(32px, 2rem);
+
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
   margin-bottom: 8px;
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
+
+  /* MINIMUM heading size */
+  font-size: 2.2rem;
 }
 
 header p {
   margin-top: 0;
-  font-size: clamp(0.95rem, 2.5vw, 1rem);
+  color: #222222;
   opacity: 0.8;
+
+  /* MINIMUM subtext size */
+  font-size: 0.95rem;
 }
 
 /* -------- Sections -------- */
 section {
-  margin-top: clamp(32px, 6vw, 48px);
+  margin-top: 48px;
   background-color: #F5E7C6;
 
-  /* Enforced padding minimum */
-  padding: clamp(24px, 5vw, 32px);
+  /* MINIMUM padding only */
+  padding: max(32px, 1.5rem);
 
   border-radius: 12px;
   box-shadow:
@@ -66,31 +73,35 @@ section {
 
 /* -------- Headings -------- */
 h1 {
+  font-size: 2.2rem;
   letter-spacing: 0.5px;
 }
 
 h2 {
-  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  font-size: 1.6rem;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #FF6D1F;
   padding-bottom: 0.4rem;
 }
 
 h3 {
-  font-size: clamp(1.05rem, 3vw, 1.2rem);
+  font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
 
 h4 {
-  font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+  font-size: 0.95rem;
   margin-bottom: 1rem;
   opacity: 0.75;
 }
 
 /* -------- Text -------- */
 p {
+  line-height: 1.6;
   margin-bottom: 1rem;
-  max-width: 70ch; /* readable line length */
+
+  /* MINIMUM paragraph size */
+  font-size: 1rem;
 }
 
 section p:last-child {
@@ -99,8 +110,8 @@ section p:last-child {
 
 /* -------- Projects -------- */
 #projects > div {
-  margin-top: clamp(24px, 5vw, 32px);
-  padding-top: clamp(16px, 4vw, 24px);
+  margin-top: 32px;
+  padding-top: 24px;
   border-top: 1px solid rgba(34, 34, 34, 0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -120,6 +131,9 @@ a {
   color: #FF6D1F;
   text-decoration: none;
   font-weight: 500;
+
+  /* MINIMUM tap size indirectly via font */
+  font-size: 1rem;
 }
 
 a:hover {
@@ -131,7 +145,7 @@ a:hover {
   width: 100%;
   display: block;
 
-  /* Enforced minimum visibility */
+  /* MINIMUM visibility */
   min-height: 180px;
 
   margin: 16px 0 20px 0;
@@ -146,7 +160,8 @@ a:hover {
 }
 
 .art-note {
-  font-size: clamp(0.85rem, 2.5vw, 0.9rem);
+  font-size: 0.9rem;
+  color: #222222;
   margin-bottom: 1rem;
 }
 
@@ -154,17 +169,18 @@ a:hover {
 .art-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(12px, 3vw, 16px);
+  gap: 1rem;
   justify-content: center;
 }
 
 /* Art tiles */
 .art-grid img {
-  width: clamp(160px, 30vw, 200px);
-  height: clamp(160px, 30vw, 200px);
+  width: 200px;
+  height: 200px;
 
-  min-width: 140px;
-  min-height: 140px;
+  /* MINIMUM guard (same as defined size) */
+  min-width: 200px;
+  min-height: 200px;
 
   object-fit: contain;
   background: #111;
@@ -176,12 +192,11 @@ a:hover {
 #music {
   margin: 4rem auto 0 auto;
   max-width: 600px;
-  min-width: 260px;
   text-align: center;
 }
 
 .music-note {
-  font-size: clamp(0.85rem, 2.5vw, 0.9rem);
+  font-size: 0.9rem;
   color: #888;
   margin-bottom: 1rem;
 }
@@ -190,8 +205,8 @@ a:hover {
 .music-player {
   background: #0f0f0f;
 
-  /* Enforced touch target spacing */
-  padding: clamp(16px, 4vw, 20px);
+  /* MINIMUM padding */
+  padding: max(16px, 1rem);
 
   border-radius: 6px;
   border: 1px solid #222;
@@ -201,12 +216,17 @@ a:hover {
 
 .music-player p {
   margin: 0 0 0.5rem 0;
-  font-size: clamp(0.85rem, 2.5vw, 0.9rem);
+
+  /* MINIMUM readable size */
+  font-size: 0.9rem;
+
   color: #FAF3E1;
 }
 
 audio {
   width: 100%;
+
+  /* MINIMUM control height */
   min-height: 40px;
 }
 
