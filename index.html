@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
     <link rel="stylesheet" href="styles.css">
 
@@ -44,11 +45,11 @@
     <h2>Projects</h2>
 
 
-    <article id="stock-market-simulation", class="reveal">
+    <article id="stock-market-simulation" class="reveal">
       <h3>Pygame Stock Market Simulation</h3>
       <p><em>A data-driven stock market simulator with real-time price and volume modeling</em></p>
 
-      <video src="media/stock-game.mp4" alt="stock market simulation gameplay footage" autoplay muted loop playsinline></video>
+      <video src="media/stock-game.mp4"  autoplay muted loop playsinline></video>
 
       <p>
         This project significantly deepened my understanding of
@@ -74,7 +75,7 @@
       <h3>Modular Crafting & Sprite Generation System</h3>
       <p><em>A procedural weapon crafting and sprite generation prototype built in Python</em></p>
 
-      <video src="media/blacksmith-game.mp4" alt="modular crafting and sprite generation gameplay footage" autoplay muted loop playsinline></video>
+      <video src="media/blacksmith-game.mp4"  autoplay muted loop playsinline></video>
 
       <p>
         I began this project by applying lessons learned from my simulation work,
@@ -100,7 +101,7 @@
       <h3>Experimental Tile-Based World Renderer</h3>
       <p><em>An early prototype built with FreeSimpleGUI</em></p>
 
-      <video src="media/clicker-game.mp4" alt="clicker game prototype footage" autoplay muted loop playsinline></video>
+      <video src="media/clicker-game.mp4"  autoplay muted loop playsinline></video>
 
       <p>
         This experimental prototype pushed me to think creatively about
@@ -148,9 +149,9 @@
       <img src="art/ASTEROTH CLEAN.png" alt="Pixel art sword">
       <img src="art/blink_gif.gif" alt="Pixel art UI panel">
       <img src="art/flight.gif" alt="Pixel art forge background">
-      <img src="art/IBLIS.png"></img>
-      <img src="art/agony_face-Sheet.png"></img>
-      <img src="art/bael.png"></img>
+      <img src="art/IBLIS.png">
+      <img src="art/agony_face-Sheet.png">
+      <img src="art/bael.png">
     </div>
   </section>
   <section id="music" class="reveal">
@@ -162,25 +163,30 @@
     <div class="music-player">
       <p><strong>Track:</strong> Memories </p>
       <audio controls preload="none">
-        <source src="music/Memories - Breakcore.wav" alt="Memories - Breakcore" type="audio/wav">
+        <source src="music/Memories - Breakcore.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
       </div>
   </section>
     </main>
-      <script>
-        const observer = new IntersectionObserver(entries => {
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
               observer.unobserve(entry.target);
             }
           });
-        });
+        },
+        {
+          threshold: 0.15
+        }
+      );
 
-        document.querySelectorAll(".reveal").forEach(el => {
-          observer.observe(el);
-        });
-      </script>
+      document.querySelectorAll(".reveal").forEach(el => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
