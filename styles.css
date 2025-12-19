@@ -4,18 +4,16 @@ body {
   margin: 0;
   padding: 0;
 
-  /* MINIMUM readability guard */
   font-size: 15px;
 
-  color: #222222;
+  color: #faf4d3;
   line-height: 1.6;
   letter-spacing: 0.2px;
 
   background: radial-gradient(
     circle at top,
-    #e6d18a 0%,
-    #b08a2e 45%,
-    #6f571b 100%
+    #003330 0%,
+    #0c1618 70%
   );
 }
 
@@ -24,51 +22,41 @@ header,
 main {
   max-width: 900px;
   margin: 0 auto;
-
-  /* MINIMUM padding only */
   padding: max(32px, 1.5rem) max(24px, 1.25rem);
 }
 
 /* -------- Header -------- */
 header {
   text-align: center;
-  background-color: #F5E7C6;
+  background-color: #015c57;
   border-radius: 10px;
-
-  /* MINIMUM spacing */
   margin-top: max(32px, 2rem);
 
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
 
 header h1 {
   margin-bottom: 8px;
-
-  /* MINIMUM heading size */
   font-size: 2.2rem;
+  color: #faf4d3;
 }
 
 header p {
   margin-top: 0;
-  color: #222222;
-  opacity: 0.8;
-
-  /* MINIMUM subtext size */
+  color: #f6be9a;
   font-size: 0.95rem;
 }
 
 /* -------- Sections -------- */
 section {
   margin-top: 48px;
-  background-color: #F5E7C6;
-
-  /* MINIMUM padding only */
+  background-color: #015c57;
   padding: max(32px, 1.5rem);
 
   border-radius: 12px;
   box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* -------- Headings -------- */
@@ -80,28 +68,30 @@ h1 {
 h2 {
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #FF6D1F;
+  border-bottom: 2px solid #d1ac00;
   padding-bottom: 0.4rem;
+  color: #faf4d3;
 }
 
 h3 {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
+  color: #faf4d3;
 }
 
 h4 {
   font-size: 0.95rem;
   margin-bottom: 1rem;
   opacity: 0.75;
+  color: #faf4d3;
 }
 
 /* -------- Text -------- */
 p {
   line-height: 1.6;
   margin-bottom: 1rem;
-
-  /* MINIMUM paragraph size */
   font-size: 1rem;
+  color: #faf4d3;
 }
 
 section p:last-child {
@@ -112,7 +102,7 @@ section p:last-child {
 #projects > div {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgba(34, 34, 34, 0.15);
+  border-top: 1px solid rgba(209, 172, 0, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -128,29 +118,26 @@ section p:last-child {
 
 /* -------- Links -------- */
 a {
-  color: #FF6D1F;
+  color: #f6be9a;
   text-decoration: none;
   font-weight: 500;
-
-  /* MINIMUM tap size indirectly via font */
   font-size: 1rem;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #d1ac00;
 }
 
 /* -------- Video -------- */
 #projects video {
   width: 100%;
   display: block;
-
-  /* MINIMUM visibility */
   min-height: 180px;
 
   margin: 16px 0 20px 0;
   border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 
 /* -------- Artwork -------- */
@@ -161,7 +148,7 @@ a:hover {
 
 .art-note {
   font-size: 0.9rem;
-  color: #222222;
+  color: #f6be9a;
   margin-bottom: 1rem;
 }
 
@@ -177,15 +164,14 @@ a:hover {
 .art-grid img {
   width: 200px;
   height: 200px;
-
-  /* MINIMUM guard (same as defined size) */
   min-width: 200px;
   min-height: 200px;
 
   object-fit: contain;
-  background: #111;
+  background: #0c1618;
   border-radius: 6px;
   image-rendering: pixelated;
+  border: 1px solid rgba(209, 172, 0, 0.4);
 }
 
 /* -------- Music -------- */
@@ -197,36 +183,29 @@ a:hover {
 
 .music-note {
   font-size: 0.9rem;
-  color: #888;
+  color: #f6be9a;
   margin-bottom: 1rem;
 }
 
 /* Music player container */
 .music-player {
-  background: #0f0f0f;
-
-  /* MINIMUM padding */
+  background: #0c1618;
   padding: max(16px, 1rem);
 
   border-radius: 6px;
-  border: 1px solid #222;
+  border: 1px solid rgba(209, 172, 0, 0.4);
   margin: 0 auto;
   text-align: left;
 }
 
 .music-player p {
   margin: 0 0 0.5rem 0;
-
-  /* MINIMUM readable size */
   font-size: 0.9rem;
-
-  color: #FAF3E1;
+  color: #faf4d3;
 }
 
 audio {
   width: 100%;
-
-  /* MINIMUM control height */
   min-height: 40px;
 }
 
@@ -250,4 +229,13 @@ audio {
     transform: none;
     transition: none;
   }
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
