@@ -46,6 +46,25 @@ header p {
   color: #f6be9a;
   font-size: 0.95rem;
 }
+.header-links {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.header-links a {
+  color: #9fb3ff; /* match your accent color if different */
+  text-decoration: none;
+}
+
+.header-links a:hover {
+  text-decoration: underline;
+}
+
+.header-links .divider {
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}
+
 
 /* -------- Sections -------- */
 section {

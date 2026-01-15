@@ -12,10 +12,22 @@
   </head>
   <body>
   <canvas id="bg"></canvas>
-  <header>
-    <h1>Jimmy Correia</h1>
-    <p>Software Developer — Python, Systems & Web</p>
-  </header>
+<header>
+  <h1>Jimmy Correia</h1>
+  <p>Software Developer — Python, Systems & Web</p>
+
+
+  <div class="header-links">
+    <a href="https://github.com/Sad-Sun678" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+    <span class="divider">•</span>
+    <a href="https://www.linkedin.com/in/jimmy-correia-6a49343a5/" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+  </div>
+</header>
+
 
   <main>
   <section id="about-me">
@@ -123,6 +135,40 @@
         caching strategies, and working within tool constraints.
       </p>
     </article>
+    <article id="tactical-tile-engine" class="reveal">
+      <h3>Tactical Isometric Tile Engine (In Development)</h3>
+      <p><em>A performant, systems-driven battlefield engine built from the ground up in Python</em></p>
+
+      <video src="media/ttrpg-game.mp4" autoplay muted loop playsinline></video>
+      <p>
+        &nbsp;&nbsp;&nbsp;This project is a major evolution of my earlier tile-based experiments,
+        focused on building a <strong>scalable, real-time procedural rendering pipeline</strong> suitable for
+        tactical and strategy gameplay.
+      </p>
+
+      <p>
+        The engine renders a large isometric battlefield composed of layered tiles, elevation steps,
+        and dynamic entities. A custom camera system supports smooth panning, zooming, and precise
+        screen-to-world interaction.
+      </p>
+
+      <p>
+      To address performance constraints, I implemented aggressive <strong>viewport culling</strong>,
+      minimized redundant draw calls, and refactored rendering logic into tightly scoped systems.
+      These changes resulted in a significant FPS improvement while maintaining visual clarity.
+      </p>
+
+    <p>
+      Beyond rendering, the engine integrates grid-based movement, action dispatching, and a modular
+      battle architecture designed to support turn-based combat, abilities, and future AI behavior.
+    </p>
+
+    <p>
+      This project reflects my current approach to development: designing systems with
+      <strong>clear responsibilities, measurable performance goals, and long-term extensibility</strong>.
+    </p>
+</article>
+
   </section>
 
   <section id="skills" class="reveal">
