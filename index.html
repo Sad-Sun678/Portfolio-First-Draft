@@ -109,6 +109,58 @@
         creation and saving development time.
       </p>
     </article>
+<article id="ip-camera-security" class="reveal">
+  <h3>IP Camera Security Analysis (Home Lab)</h3>
+  <p><em>Embedded systems security analysis and reverse engineering</em></p>
+<div class = "project-split">
+<img src="art/ptz_cam.jpg" class="project-image" alt="Hand Holding IP Camera Lightbulb">
+<img src = "art/disassembled.jpg" class = "project-image" alt="PTZ IP Camera Internals">
+<img src = "art/FlashChip.jpg" class = "project-image" alt="PTZ IP Camera Internals">
+</div>
+
+
+  <div class="project-text">
+  <p>
+    &nbsp;&nbsp;&nbsp;This ongoing home lab focuses on analyzing the security posture of a consumer IP camera
+    from both an attacker and defender perspective.
+  </p>
+
+  <p>
+    Initial analysis focused on understanding how the device is accessed during normal operation.
+    Using <strong>Wireshark</strong> and <strong>Kali Linux</strong>, I inspected network traffic generated
+    by the mobile companion application. This revealed that the camera is
+    <strong>not accessed directly by the mobile app</strong>; instead, the app communicates with a
+    remote cloud service that authenticates the user and brokers access to the camera feed.
+  </p>
+
+  <p>
+    Because the camera relied on a cloud-mediated control path rather than direct local access,
+    I shifted focus to services exposed by the device itself. Network service enumeration
+    identified an active <strong>Telnet service</strong>, which appeared to operate independently
+    of the cloud authentication flow and therefore represented a significantly softer local
+    attack surface.
+  </p>
+
+  <p>
+    To investigate authentication behavior further, I physically accessed the device, identified the flash chip and used a
+    <strong>logic analyzer</strong> to dump the firmware directly from the board. The extracted image
+    was analyzed in <strong>Ghidra</strong> to examine how network services and credentials were
+    implemented internally.
+  </p>
+
+  <p>
+    Although the firmware was compressed using a proprietary format, this limitation led to
+    identifying an additional attack surface: exposed <strong>UART pins</strong> on the PCB.
+    The next phase involves interfacing with UART to assess boot-time output, console access,
+    and potential privilege escalation paths.
+  </p>
+
+  <p>
+    This project has strengthened my understanding of
+    <strong>IoT communication models </strong> and <strong></strong>embedded attack's</strong>
+    </div>
+
+</article>
 
     <article id="tile-renderer" class="reveal">
       <h3>Experimental Tile-Based World Renderer</h3>
@@ -147,7 +199,7 @@
       </p>
 
       <p>
-        The engine renders a large isometric battlefield composed of layered tiles, elevation steps,
+        The engine procedurally renders a large isometric battlefield composed of layered tiles, 
         and dynamic entities. A custom camera system supports smooth panning, zooming, and precise
         screen-to-world interaction.
       </p>
@@ -175,9 +227,10 @@
     <h2>Core Skills</h2>
     <ul class="skills-list">
       <li><strong>Python:</strong> OOP, simulations, automation</li>
-      <li><strong>Game Development:</strong> Pygame, game loops, state systems</li>
-      <li><strong>Web:</strong> HTML, CSS, JavaScript fundamentals</li>
-      <li><strong>Data:</strong> JSON, SQLite</li>
+      <li><strong>Game Development:</strong> Pygame, Unity, Blender, game loops, state systems</li>
+      <li><strong>Web:</strong> HTML, CSS, Django, JavaScript fundamentals</li>
+      <li><strong>Data:</strong> JSON, SQLite, SQL</li>
+      <li><strong>Security: Ghidra, familiarity with Kali toolset, Wireshark </strong></li>
     </ul>
 
     <h2>Creative Skills</h2>
@@ -197,7 +250,7 @@
       <img src="art/blink_gif.gif" alt="Pixel art UI panel">
       <img src="art/flight.gif" alt="Pixel art forge background">
       <img src="art/IBLIS.png">
-      <img src="art/agony_face-Sheet.png">
+      <img src="art/room.png">
       <img src="art/bael.png">
     </div>
   </section>
