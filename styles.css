@@ -3,13 +3,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-
   font-size: 15px;
-
   color: #faf4d3;
   line-height: 1.6;
   letter-spacing: 0.2px;
-
   background: radial-gradient(
     circle at top,
     #003330 0%,
@@ -31,7 +28,6 @@ header {
   background-color: #015c57;
   border-radius: 10px;
   margin-top: max(32px, 2rem);
-
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
 
@@ -46,13 +42,14 @@ header p {
   color: #f6be9a;
   font-size: 0.95rem;
 }
+
 .header-links {
   margin-top: 0.5rem;
   font-size: 0.95rem;
 }
 
 .header-links a {
-  color: #9fb3ff; /* match your accent color if different */
+  color: #9fb3ff;
   text-decoration: none;
 }
 
@@ -65,13 +62,11 @@ header p {
   opacity: 0.6;
 }
 
-
 /* -------- Sections -------- */
 section {
   margin-top: 48px;
   background-color: #015c57;
   padding: max(32px, 1.5rem);
-
   border-radius: 12px;
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.5),
@@ -107,7 +102,6 @@ h4 {
 
 /* -------- Text -------- */
 p {
-  line-height: 1.6;
   margin-bottom: 1rem;
   font-size: 1rem;
   color: #faf4d3;
@@ -116,59 +110,6 @@ p {
 section p:last-child {
   margin-bottom: 0;
 }
-
-/* -------- Projects -------- */
-#projects > div {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(209, 172, 0, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-/* -------- Side-by-side project layout -------- */
-.project-split {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  margin: 16px 0 24px 0;
-}
-
-.project-image {
-  width: 100%;
-  height: 260px;             
-  object-fit: cover;          
-
-  border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
-}
-
-.project-text {
-  flex: 1;
-}
-
-/* -------- Mobile fallback -------- */
-@media (max-width: 768px) {
-  .project-split {
-    flex-direction: column;
-  }
-
-  .project-image {
-    max-width: 100%;
-  }
-}
-
-
-
-
-#projects > div:first-child {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-#projects > div:hover {
-  transform: translateY(-2px);
-}
-
 
 /* -------- Links -------- */
 a {
@@ -183,12 +124,37 @@ a:hover {
   color: #d1ac00;
 }
 
+/* -------- Projects -------- */
+#projects article + article {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(209, 172, 0, 0.35);
+}
+
+/* -------- Side-by-side project layout -------- */
+.project-split {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 16px 0 24px 0;
+  overflow: hidden;
+}
+
+.project-image {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
 /* -------- Video -------- */
 #projects video {
   width: 100%;
   display: block;
   min-height: 180px;
-
   margin: 16px 0 20px 0;
   border-radius: 10px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
@@ -196,7 +162,6 @@ a:hover {
 
 /* -------- Artwork -------- */
 #art {
-  margin-top: 4rem;
   text-align: center;
 }
 
@@ -206,7 +171,6 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-/* Art grid container */
 .art-grid {
   display: flex;
   flex-wrap: wrap;
@@ -214,13 +178,11 @@ a:hover {
   justify-content: center;
 }
 
-/* Art tiles */
 .art-grid img {
   width: 200px;
   height: 200px;
   min-width: 200px;
   min-height: 200px;
-
   object-fit: contain;
   background: #0c1618;
   border-radius: 6px;
@@ -230,9 +192,9 @@ a:hover {
 
 /* -------- Music -------- */
 #music {
-  margin: 4rem auto 0 auto;
   max-width: 600px;
   text-align: center;
+  justify-self: center;
 }
 
 .music-note {
@@ -241,21 +203,18 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-/* Music player container */
 .music-player {
   background: #0c1618;
   padding: max(16px, 1rem);
-
   border-radius: 6px;
   border: 1px solid rgba(209, 172, 0, 0.4);
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 .music-player p {
   margin: 0 0 0.5rem 0;
   font-size: 0.9rem;
-  color: #faf4d3;
 }
 
 audio {
@@ -285,6 +244,7 @@ audio {
   }
 }
 
+/* -------- Background canvas -------- */
 #bg {
   position: fixed;
   top: 0;
@@ -292,4 +252,16 @@ audio {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 768px) {
+  .project-split {
+    flex-direction: column;
+  }
+
+  .project-image {
+    height: auto;
+    max-width: 100%;
+  }
 }
