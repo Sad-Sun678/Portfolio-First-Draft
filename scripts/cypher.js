@@ -4,6 +4,35 @@ const output = document.getElementById("encoded-output-box");
 const dropdown = document.getElementById("cypher-selection-dropdown");
 const submitBtn = document.getElementById("submit-btn");  // give your button this id
 
+// Set up the baconian array 
+const baconian_object = {
+  a: "AAAAA",
+  b: "AAAAB",
+  c: "AAABA",
+  d: "AAABB",
+  e: "AABAA",
+  f: "AABAB",
+  g: "AABBA",
+  h: "AABBB",
+  i: "ABAAA",
+  j: "ABAAB",
+  k: "ABABA",
+  l: "ABABB",
+  m: "ABBAA",
+  n: "ABBAB",
+  o: "ABBBA",
+  p: "ABBBB",
+  q: "BAAAA",
+  r: "BAAAB",
+  s: "BAABA",
+  t: "BAABB",
+  u: "BABAA",
+  v: "BABAB",
+  w: "BABBA",
+  x: "BABBB",
+  y: "BBAAA",
+  z: "BBAAB"
+};
 // The cypher functions live here 
 function rot13(text) {
   return text.replace(/[a-zA-Z]/g, function(char) {
@@ -24,6 +53,21 @@ function atbash(text) {
   }).join('');
 }
 
+function baconian(text) {
+  const result = [];
+
+  for (const char of text.toLowerCase()) {
+    const encryptedLetter = baconian_object[char];
+    result.push(encryptedLetter);
+  }
+
+  return result.join(' ');
+}
+
+  
+
+
+
 
 
 // The dispatcher — reads which cipher is selected and calls the right function
@@ -38,8 +82,38 @@ function encode() {
   if (selected === "Atbash") {
     output.value = atbash(message)
   }
-
+  if (selected === "Baconian") {
+    output.value = baconian(message)
+  }
 }
 
 // Wire the button to the dispatcher
 submitBtn.addEventListener("click", encode);
+
+
+
+
+
+//.............    ...................     ..................
+//............  / \  ................  / \   ................
+//...........  //.\\  ..............  //.\\   ...............
+//..........  //...\\  ............  //....\    .. .___......
+//.........  //.....\\______________//.....\\   .. |__ \.....
+//........   |#####                         |    ..  / /.....
+//........  |####                ________    |   .. |_|......
+//.......  |####  _______       /         \   |   . (_)......
+//.......  |#### / ______         ______      |     .........
+//.......  |###     ( X )|       |  ( X )     |     .........
+//.......  |###    _____/  _____  \______     |     .........
+//.......  |###           /     \             |      ........
+//........  \####        /_______\           /       ........
+//.........   \###   __====..|..====__/    /           ......
+//...........   \#_===\_____/ \______/===__           .......
+//........   __-- \##      |  | |       /   --__    .........
+//..........        \______|  | |____ _/          ...........
+//................         |__|_|          ..................
+// _                                         _                   
+//| |_   _ _ __   __ _  __      ____ _ ___  | |__   ___ _ __ ___ 
+//| | | | | '_ \ / _` | \ \ /\ / / _` / __| | '_ \ / _ \ '__/ _ \
+//| | |_| | | | | (_| |  \ V  V / (_| \__ \ | | | |  __/ | |  __/
+//|_|\__,_|_| |_|\__,_|   \_/\_/ \__,_|___/ |_| |_|\___|_|  \___|
