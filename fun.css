@@ -1,1 +1,75 @@
 /* fun.css — styles specific to fun.html */
+body {
+    background: linear-gradient(
+       #03071E,#370617,#6A040F,
+       #9d0208,#d00000,#dc2f02,
+       #e85d04,#f48c06,#faa307,
+       #ffba08
+    );
+}
+header {
+  text-align: center;
+  background-color: red;
+  background-image: linear-gradient(to bottom right, #03071E,#370617,#6A040F);  padding: max(32px, 1.5rem);
+
+  border-radius: 10px;
+  margin-top: max(32px, 2rem);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+section {
+  margin-top: 48px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, #03071E,#370617,#6A040F);  padding: max(32px, 1.5rem);
+  border-radius: 12px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #d1ac00;
+  padding-bottom: 0.4rem;
+  color: #ffba08;
+}
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #d1ac00;
+  padding-bottom: 0.4rem;
+  color: #ffba08;
+}
+#encoder-demo{
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+#encoder-input-box{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#encoded-output-box{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type="button"] {
+    display: block;   
+    margin: 0 auto;
+}
+#fun-intro {
+  background-image: linear-gradient(to bottom right, #03071E, #370617, #6A040F);
+  clip-path: polygon(
+    30% 0%, 70% 0%,
+    100% 30%, 100% 70%,
+    70% 100%, 30% 100%,
+    0% 70%, 0% 30%
+  );
+  padding: 80px 120px;
+  text-align: center;
+  /* override the default section margin/border-radius since clip-path replaces the shape */
+  border-radius: 0;
+}
+#fun-stuff {
+  filter: drop-shadow(0px 0px 60px #6A040F);}

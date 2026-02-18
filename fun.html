@@ -19,20 +19,48 @@
 </header>
 
 <main>
-
-  <section id="fun-intro">
-    <h2>What Is This?</h2>
-    <p>
+  <div id="fun-stuff">
+    <section class="octagon" id="fun-intro" >
+      <h2>What Is This?</h2>
+      <p>
       This is where I put things that don't fit on a resume - interactive experiments,
       playful UI ideas, and whatever I felt like building that week. No frameworks,
       no component libraries, just canvas and vanilla JS.
-    </p>
-  </section>
+      </p>
+    </section>
+  </div>
 
-  <!-- Drop experiments in here as articles -->
+  <!-- Drop experiments in here as sections -->
+   <section class="encoder-experiment" id = "encoder-demo">
+    <p>Select your Cypher from the drop down list.</p>
+
+    <div>
+
+      <label for="cypher">Select a cypher:</label>
+
+      <select name="cyphers" id="cypher-selection-dropdown">
+
+        <option value="ROT13">ROT13</option>
+        <option value="Atbash">Atbash</option>
+        <!-- <option value="Rail-Fence">Rail Fence</option>
+        <option value="Caesar">Ceasar</option> -->
+      </select>
+
+    </div>
+
+    <form>
+    <textarea id="encoder-input-box" rows="4" cols="50">Please enter a message you'd like to encode here</textarea>
+    <br>
+    <input type="button" id="submit-btn" value="Submit">
+    <p>Click the "Submit" button and your message will be encoded with your chosen cypher!</p>
+    <textarea id="encoded-output-box" rows="4" cols="50">Your encoded output will be here after you submit!</textarea>
+    </form>
+  </section>
 
 </main>
 
 <script src="script.js"></script>
+<script src="scripts/cypher.js"></script>
+
 </body>
 </html>
